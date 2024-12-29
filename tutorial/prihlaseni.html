@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přihlášení</title>
+    <!-- Firebase SDK verze 8.0 -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+</head>
+<body>
+    <div style="text-align:center; margin-top: 50px;">
+        <!-- Logo -->
+        <img src="fortu-logo.png" alt="Fortu Logo" style="max-width: 200px; height: auto;">
+        
+        <!-- Přihlašovací formulář -->
+        <form id="login-form">
+            <div>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" placeholder="Zadejte email" required><br><br>
+            </div>
+            <div>
+                <label for="password">Heslo:</label><br>
+                <input type="password" id="password" placeholder="Zadejte heslo" required><br><br>
+            </div>
+            <button type="submit">Přihlásit se</button>
+        </form>
+
+        <!-- Zobrazí úspěšnou zprávu nebo chybu -->
+        <p id="status-message" style="font-size: 16px;"></p>
+
+        <!-- Tlačítka pro přesměrování -->
+        <br><br>
+        
+        <button onclick="window.location.href='burza.html'">Zpátky</button>
+    </div>
+
+    <script>
+        // Firebase konfigurace
+        const firebaseConfig = {
+            apiKey: "AIzaSyCBXl22xfD0PnSbXY8xqZPcq0d_L1e_Ddk",
+            authDomain: "fortu-e8e9a.firebaseapp.com",
+            projectId: "fortu-e8e9a",
+            storageBucket: "fortu-e8e9a.firebasestorage.app",
+            messagingSenderId: "594460643588",
+            appId: "1:594460643588:web:5c956aba20381a42cb4051"
+        };
+
+        // Inicializace Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Funkce pro přihlášení uživatele
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Ověření přihlášení
+            auth.signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Přihlášení úspěšné, zobrazí se zelený text "Vítejte"
+                    document.getElementById("status-message").textContent = "Vítejte!";
+                    document.getElementById("status-message").style.color = "green";
+                    // Po úspěšném přihlášení přesměrování na další stránku
+                    setTimeout(() => {
+                        window.location.href = "home.html";
+                    }, 2000); // Přesměrování po 2 sekundách
+                })
+                .catch((error) => {
+                    // Zobrazení chyby při neúspěšném přihlášení
+                    const errorMessage = error.message;
+                    document.getElementById("status-message").textContent = "Špatné údaje";
+                    document.getElementById("status-message").style.color = "red";
+                });
+        });
+    </script>
+</body>
+</html>

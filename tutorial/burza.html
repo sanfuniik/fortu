@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortu </title>
+    <style>
+        /* Reset všech stylů */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 50%;
+            overflow-x: hidden; /* Zabraňuje horizontálnímu scrollování */
+            background-color: #FFFFFF; /* Bílé pozadí */
+        }
+
+        /* Černý obdélník nahoře */
+        .banner {
+            background-color: #000000;
+            color: #FFFFFF;
+            height: 25px; /* Zvýšení výšky obdélníku o 5px */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Text, který se pohybuje */
+        .banner-text-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .banner-text {
+            font-size: 18px; /* Zvýšení velikosti textu */
+            white-space: nowrap; /* Zabrání přetečení textu */
+            animation: slide 10s linear infinite;
+            padding-right: 30px; /* Mezera mezi texty */
+        }
+
+        /* Druhý text začíná se zpožděním, ale na stejné pozici jako první */
+        .banner-text:nth-child(2) {
+            animation-delay: 3s; /* Druhý text začne 4 sekundy po prvním */
+            transform: translateX(350%); /* Ujistíme se, že začíná mimo obrazovku na pravé straně */
+        }
+
+        /* Animace pro pohyb textu */
+        @keyframes slide {
+            0% {
+                transform: translateX(350%); /* Začátek z pravé strany */
+            }
+            100% {
+                transform: translateX(-350%); /* Konec na levé straně */
+            }
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            height: 250px; /* Zvýšení výšky loga o 5px */
+        }
+
+        .header img {
+            height: 300px; /* Zvýšení výšky loga o 5px */
+            width: 380px; /* Zůstává stejné */
+            display: block;
+        }
+
+        /* Navigační menu */
+        .nav {
+            display: flex;
+            gap: 77px;
+            margin-left: 77px;
+        }
+
+        /* Individuální úpravy pro každý odkaz */
+        .link-onas {
+            font-size: 20px;
+            line-height: 20px;
+            color: #000000; /* Barva textu pro O nás */
+            font-weight: normal; /* Tloušťka písma pro O nás */
+        }
+
+        .link-hodnoceni {
+            font-size: 20px;
+            line-height: 20px;
+            color: #000000; /* Barva textu pro Hodnocení */
+            font-weight: bold; /* Tloušťka písma pro Hodnocení */
+        }
+
+        .link-kontakt {
+            font-size: 20px;
+            line-height: 20px;
+            color: #000000; /* Barva textu pro Kontakt */
+            font-weight: normal; /* Tloušťka písma pro Kontakt */
+        }
+
+        .link-span {
+            font-size: 20px;
+            line-height: 20px;
+            color: #000000; /* Barva textu pro I */
+        }
+
+        .link-burza {
+            font-size: 25px;
+            line-height: 25px;
+            color: #000000; /* Barva textu pro Burza */
+            font-weight: bold; /* Tloušťka písma pro Burza */
+        }
+
+        /* Oprava pro "Přihlášení" s pozadím a bílým textem */
+        .link-prihlaseni {
+            font-size: 25px;
+            line-height: 25px;
+            color: #FFFFFF;
+            background-color: #000000;
+            padding: 6px 10px;
+            border-radius: 15px;
+            display: flex; /* Přidáme flex, aby text byl správně vycentrován */
+            justify-content: center; /* Ujistíme se, že text je vycentrovaný horizontálně */
+            align-items: center; /* Ujistíme se, že text je vycentrovaný vertikálně */
+            min-width: 100px; /* Minimální šířka pro správné zobrazení textu */
+        }
+    </style>
+</head>
+<body>
+    <!-- Černý banner s textem -->
+    <div class="banner">
+        <div class="banner-text-container">
+            <div class="banner-text">
+                Investice nebyly nikdy lehčí! Investujte s Fortu
+            </div>
+            <div class="banner-text">
+                Investice nebyly nikdy lehčí! Investujte s Fortu
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <img src="fortu-logo.png" alt="Fortu Logo">
+
+        <nav class="nav">
+            <a href="onas.html" class="link-onas">O nás</a>
+            <a href="hodnoceni.html" class="link-hodnoceni">Hodnocení</a>
+            <a href="kontakt.html" class="link-kontakt">Kontakt</a>
+            <span class="link-span">I</span>
+            <a href="burza.html" class="link-burza" onclick="window.location.reload(); return false;">Burza</a>
+
+            <a href="prihlaseni.html" class="link-prihlaseni">Přihlášení</a>
+        </nav>
+    </header>
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortu - Burza</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Reset všech stylů */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+            background-color: #FFFFFF;
+        }
+
+        /* Černý obdélník nahoře (kopírováno z indexu) */
+        .banner {
+            background-color: #000000;
+            color: #FFFFFF;
+            height: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .banner-text-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .banner-text {
+            font-size: 18px;
+            white-space: nowrap;
+            animation: slide 10s linear infinite;
+            padding-right: 30px;
+        }
+
+        .banner-text:nth-child(2) {
+            animation-delay: 3s;
+            transform: translateX(350%);
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(350%);
+            }
+            100% {
+                transform: translateX(-350%);
+            }
+        }
+
+        /* Hlavní hlavička a navigace (kopírováno z indexu) */
+        header {
+            padding: 10px 20px;
+            background-color: #f4f4f4;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .title {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #000;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Graf a trend indikátor */
+        .graph-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .chart-box {
+            max-width: 80%;
+        }
+
+        .trend-box {
+            width: 15%;
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arrow {
+            font-size: 40px;
+        }
+
+        .percent {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        canvas {
+            max-width: 100%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    </header>
+
+    <!-- Graf a trend indikátor -->
+    <div class="graph-container">
+        <div class="trend-box">
+            <div id="arrow" class="arrow">⬆️</div>
+            <div id="percent" class="percent">+0.00%</div>
+        </div>
+
+        <div class="chart-box">
+            <canvas id="lineChart" width="800" height="400"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const maxPoints = 7;
+        const minValue = -100;
+        const maxValue = 100;
+        const updateInterval = 54000000; // Interval pro aktualizaci grafu
+        const trendUpdateFrequency = 4; // Počet bodů pro výpočet průměru (4 body)
+
+        let lastUpdateTime = Date.now(); // Uložit čas poslední aktualizace
+
+        function generateRandomPoint(previousValue = 0) {
+            const change = (Math.random() * 20 - 10); // Náhodná odchylka
+            let newValue = previousValue + change;
+            if (newValue > maxValue) newValue = maxValue;
+            if (newValue < minValue) newValue = minValue;
+            return newValue;
+        }
+
+        let savedData = localStorage.getItem('lineChartData');
+        let initialData = savedData ? JSON.parse(savedData) : [];
+
+        while (initialData.length < maxPoints) {
+            const lastValue = initialData.length > 0 ? initialData[initialData.length - 1] : 0;
+            initialData.push(generateRandomPoint(lastValue));
+        }
+
+        const ctx = document.getElementById('lineChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: Array(initialData.length).fill(''),
+                datasets: [{
+                    label: 'Hodnota v čase',
+                    data: initialData,
+                    borderColor: (context) => {
+                        const value = context.raw;
+                        return value >= 0 ? 'green' : 'red';
+                    },
+                    backgroundColor: 'rgba(0, 128, 0, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: (context) => {
+                        const value = context.raw;
+                        return value >= 0 ? 'green' : 'red';
+                    },
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.dataset.label + ': ' + tooltipItem.raw.toFixed(2) + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { ticks: { autoSkip: false } },
+                    y: {
+                        beginAtZero: true,
+                        min: minValue,
+                        max: maxValue,
+                        grid: { drawBorder: false },
+                        ticks: { color: '#888' }
+                    }
+                }
+            }
+        });
+
+        // Načtení trendu ze localStorage
+        const savedTrendData = localStorage.getItem('trendData');
+        if (savedTrendData) {
+            const trend = JSON.parse(savedTrendData);
+            document.getElementById('arrow').textContent = trend.arrow;
+            document.getElementById('percent').textContent = trend.percent;
+        }
+
+        function saveData() {
+            localStorage.setItem('lineChartData', JSON.stringify(chart.data.datasets[0].data));
+        }
+
+        function saveTrendData(arrowText, percentText) {
+            localStorage.setItem('trendData', JSON.stringify({ arrow: arrowText, percent: percentText }));
+        }
+
+        function updateChart() {
+            const lastValue = chart.data.datasets[0].data[chart.data.datasets[0].data.length - 1];
+            const newValue = generateRandomPoint(lastValue);
+            chart.data.datasets[0].data.push(newValue);
+            if (chart.data.datasets[0].data.length > maxPoints) {
+                chart.data.datasets[0].data.shift(); // Remove oldest point
+            }
+            chart.update();
+            saveData();
+
+            const currentTime = Date.now();
+            if (currentTime - lastUpdateTime > updateInterval) {
+                updateTrendIndicator(); // Update trend indicator
+                lastUpdateTime = currentTime;
+            }
+        }
+
+        // Funkce pro výpočet průměrné procentuální změny mezi 4 posledními svíčkami
+        function calculateAveragePercentChange(points) {
+            let totalChange = 0;
+
+            // Procházíme všechny sousední páry bodů
+            for (let i = 1; i < points.length; i++) {
+                const prevPoint = points[i - 1];
+                const currentPoint = points[i];
+                const percentChange = ((currentPoint - prevPoint) / prevPoint) * 100;
+                totalChange += percentChange;
+            }
+
+            return totalChange / (points.length - 1); // Vydělíme počtem párů
+        }
+
+        function updateTrendIndicator() {
+            const dataPoints = chart.data.datasets[0].data.slice(-trendUpdateFrequency);
+            const avgPercentChange = calculateAveragePercentChange(dataPoints);
+
+            const arrow = document.getElementById('arrow');
+            const percent = document.getElementById('percent');
+
+            if (avgPercentChange < 0) {
+                arrow.textContent = '⬇️';
+                percent.textContent = avgPercentChange.toFixed(2) + '%';
+            } else if (avgPercentChange > 0) {
+                arrow.textContent = '⬆️';
+                percent.textContent = '+' + avgPercentChange.toFixed(2) + '%';
+            } else {
+                arrow.textContent = '➡️';
+                percent.textContent = '0.00%';
+            }
+
+            saveTrendData(arrow.textContent, percent.textContent);
+        }
+
+    </script>
+</body>
+</html>

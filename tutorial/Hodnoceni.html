@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hodnocení - Fortu</title>
+    <style>
+        /* Reset všech stylů */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+            background-color: #FFFFFF;
+        }
+
+        /* Černý obdélník nahoře */
+        .banner {
+            background-color: #000000;
+            color: #FFFFFF;
+            height: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-text-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .banner-text {
+            font-size: 18px;
+            white-space: nowrap;
+            animation: slide 10s linear infinite;
+            padding-right: 30px;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(350%);
+            }
+            100% {
+                transform: translateX(-350%);
+            }
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            height: 250px;
+            justify-content: flex-start;
+            padding-left: 20px;
+        }
+
+        .header img {
+            height: 300px;
+            width: 380px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 77px;
+            margin-left: 20px;
+        }
+
+        .link {
+            font-size: 20px;
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .link-burza {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .link-prihlaseni {
+            font-size: 25px;
+            color: #FFFFFF;
+            background-color: #000000;
+            padding: 6px 10px;
+            border-radius: 15px;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .review-section {
+            margin: 50px;
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+        }
+
+        .review-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .review-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .review-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .review-item .text {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <div class="banner-text-container">
+            <div class="banner-text">Webová stránka je v beta verzi! Prosím nahlaste případné chyby. Děkujeme</div>
+        </div>
+    </div>
+
+    <header class="header">
+        <img src="fortu-logo.png" alt="Fortu Logo">
+        <nav class="nav">
+            <a href="onas.html" class="link">O nás</a>
+            <a href="hodnoceni.html" class="link">Hodnocení</a>
+            <a href="kontakt.html" class="link">Kontakt</a>
+            <span class="link">I</span>
+            <a href="burza.html" class="link link-burza">Burza</a>
+            <a href="prihlaseni.html" class="link link-prihlaseni">Přihlášení</a>
+        </nav>
+    </header>
+
+    <div class="review-section">
+        <h1>Hodnocení</h1>
+
+        <!-- První recenze -->
+        <div class="review-item">
+            <img src="snsrcz.png" alt="Recenzent 1">
+            <div class="text">
+                <p><strong>Majitel Ondřej Jánský:</strong> Jsem rád, že vše funguje a doufám, že budou naši klienti stejně spokojeni jako já a můj team.</p>
+            </div>
+        </div>
+
+        <!-- Druhá recenze -->
+        <div class="review-item">
+            <img src="zsrcz.png" alt="Recenzent 2">
+            <div class="text">
+                <p><strong>Emil Prošek:</strong> Je to nová firma, co nám dává možnost investovat. Zatím vypadá velmi dobře, takže hodnotím pozitivně.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

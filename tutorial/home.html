@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Home</title>
+    <!-- Firebase SDK verze 8.0 -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+</head>
+<body>
+    <div style="text-align:center; margin-top: 50px;">
+        <h1>Vítejte na stránce Home</h1>
+        <p>Jste přihlášený.</p>
+        <!-- Tlačítko pro odhlášení -->
+        <button onclick="logout()">Odhlásit se</button>
+    </div>
+
+    <script>
+        // Firebase konfigurace
+        const firebaseConfig = {
+            apiKey: "AIzaSyCBXl22xfD0PnSbXY8xqZPcq0d_L1e_Ddk",
+            authDomain: "fortu-e8e9a.firebaseapp.com",
+            projectId: "fortu-e8e9a",
+            storageBucket: "fortu-e8e9a.firebasestorage.app",
+            messagingSenderId: "594460643588",
+            appId: "1:594460643588:web:5c956aba20381a42cb4051"
+        };
+
+        // Inicializace Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Ověření přihlášení, pokud uživatel není přihlášen, přesměrujeme ho zpět na přihlášení
+        auth.onAuthStateChanged(user => {
+            if (!user) {
+                // Pokud není přihlášený, přesměrujeme zpět na přihlášení
+                window.location.href = "prihlaseni.html";
+            }
+        });
+
+        // Funkce pro odhlášení
+        function logout() {
+            auth.signOut().then(() => {
+                window.location.href = "prihlaseni.html"; // Po odhlášení zpět na přihlášení
+            });
+        }
+    </script>
+</body>
+</html>

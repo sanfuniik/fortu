@@ -1,0 +1,180 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortu </title>
+    <style>
+        /* Reset všech stylů */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden; /* Zabraňuje horizontálnímu scrollování */
+            background-color: #FFFFFF; /* Bílé pozadí */
+        }
+
+        /* Černý obdélník nahoře */
+        .banner {
+            background-color: #000000;
+            color: #FFFFFF;
+            height: 25px; /* Zvýšení výšky obdélníku o 5px */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .banner-text-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .banner-text {
+            font-size: 18px; /* Zvýšení velikosti textu */
+            white-space: nowrap; /* Zabrání přetečení textu */
+            animation: slide 10s linear infinite;
+            padding-right: 30px; /* Mezera mezi texty */
+        }
+
+        .banner-text:nth-child(2) {
+            animation-delay: 3s; /* Druhý text začne 4 sekundy po prvním */
+            transform: translateX(350%);
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(350%);
+            }
+            100% {
+                transform: translateX(-350%);
+            }
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            height: 250px;
+            justify-content: flex-start; /* Zarovná header doleva */
+            padding-left: 20px; /* Přidání odsazení zleva */
+        }
+
+        .header img {
+            height: 300px;
+            width: 380px;
+            display: block;
+        }
+
+        .nav {
+            display: flex;
+            gap: 77px;
+            margin-left: 20px; /* Snížení odsazení mezi logem a texty */
+        }
+
+        .link-onas {
+            font-size: 20px;
+            color: #000000;
+        }
+
+        .link-hodnoceni {
+            font-size: 20px;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .link-kontakt {
+            font-size: 20px;
+            color: #000000;
+        }
+
+        .link-span {
+            font-size: 20px;
+            color: #000000;
+        }
+
+        .link-burza {
+            font-size: 25px;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .link-prihlaseni {
+            font-size: 25px;
+            color: #FFFFFF;
+            background-color: #000000;
+            padding: 6px 10px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 100px;
+        }
+
+        .new-element {
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .new-element img {
+            max-width: 50%;
+            height: auto;
+        }
+
+        .new-element .button {
+            padding: 10px 20px;
+            font-size: 20px;
+            color: #FFFFFF;
+            background-color: #000000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .new-element .button:hover {
+            background-color: #444444;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-text-container">
+            <div class="banner-text">
+                Investice nebyly nikdy lehčí! Investujte s Fortu
+            </div>
+            <div class="banner-text">
+                Investice nebyly nikdy lehčí! Investujte s Fortu
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <img src="fortu-logo.png" alt="Fortu Logo">
+
+        <nav class="nav">
+            <a href="tutorial/onas.html" class="link-onas">O nás</a>
+            <a href="tutorial/hodnoceni.html" class="link-hodnoceni">Hodnocení</a>
+            <a href="tutorial/kontakt.html" class="link-kontakt">Kontakt</a>
+            <span class="link-span">I</span>
+            <a href="tutorial/burza.html" class="link-burza">Burza</a>
+            <a href="tutorial/prihlaseni.html" class="link-prihlaseni">Přihlášení</a>
+        </nav>
+    </header>
+
+    <div class="new-element">
+        <img src="investing.jpg" alt="Investování">
+        <a href="tutorial/burza.html" class="button">Přejít na burzu</a>
+    </div>
+</body>
+</html>
+

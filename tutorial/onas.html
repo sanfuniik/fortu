@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O naší firmě - Fortu</title>
+    <style>
+        /* Reset všech stylů */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+            background-color: #FFFFFF;
+        }
+
+        /* Černý obdélník nahoře */
+        .banner {
+            background-color: #000000;
+            color: #FFFFFF;
+            height: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-text-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .banner-text {
+            font-size: 18px;
+            white-space: nowrap;
+            animation: slide 10s linear infinite;
+            padding-right: 30px;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(350%);
+            }
+            100% {
+                transform: translateX(-350%);
+            }
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            height: 250px;
+            justify-content: flex-start;
+            padding-left: 20px;
+        }
+
+        .header img {
+            height: 300px;
+            width: 380px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 77px;
+            margin-left: 20px;
+        }
+
+        .link {
+            font-size: 20px;
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .link-burza {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .link-prihlaseni {
+            font-size: 25px;
+            color: #FFFFFF;
+            background-color: #000000;
+            padding: 6px 10px;
+            border-radius: 15px;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .about-section {
+            margin: 50px;
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+        }
+
+        .about-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        /* Sekce Kdo jsme */
+        .who-we-are {
+            margin: 50px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            gap: 30px;
+        }
+
+        .who-we-are .person {
+            text-align: center;
+        }
+
+        .who-we-are img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .who-we-are .role {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .who-we-are .partner {
+            font-size: 18px;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <div class="banner-text-container">
+            <div class="banner-text">Investice nebyly nikdy lehčí! Investujte s Fortu</div>
+        </div>
+    </div>
+
+    <header class="header">
+        <img src="fortu-logo.png" alt="Fortu Logo">
+        <nav class="nav">
+            <a href="onas.html" class="link">O nás</a>
+            <a href="hodnoceni.html" class="link">Hodnocení</a>
+            <a href="kontakt.html" class="link">Kontakt</a>
+            <span class="link">I</span>
+            <a href="burza.html" class="link link-burza">Burza</a>
+            <a href="prihlaseni.html" class="link link-prihlaseni">Přihlášení</a>
+        </nav>
+    </header>
+
+    <div class="about-section">
+        <h1>O naší firmě Fortu</h1>
+        <p>Fortu je inovativní společnost zaměřená na poskytování investičních řešení pro moderní investory. Naším cílem je zpřístupnit investování všem a nabídnout jednoduchou, bezpečnou a efektivní platformu.</p>
+        <p>Naše platforma umožňuje uživatelům sledovat trhy, investovat do různých aktiv a učit se o světě financí. Klientům poskytujeme transparentnost, spolehlivost a profesionální podporu.</p>
+        <p>Jsme hrdí na to, že nabízíme nástroje, které pomáhají lidem zlepšovat jejich finanční budoucnost. Připojte se k nám a objevte svět investic s Fortu!</p>
+    </div>
+
+    <!-- Sekce Kdo jsme -->
+    <div class="who-we-are">
+        <!-- První osoba - Majitel společnosti Fortu -->
+        <div class="person">
+            <img src="snsrcz.png" alt="Majitel společnosti Fortu">
+            <div class="role">MAJITEL společnosti Fortu s.r.o</div>
+        </div>
+
+        <!-- Druhá osoba - Majitel banky MONETA Money Bank -->
+        <div class="person">
+            <img src="majb.png" alt="Majitel banky MONETA Money Bank">
+            <div class="role">MAJITEL banky MONETA Money Bank, a.s.</div>
+            <div class="partner">A je to náš partner</div>
+        </div>
+    </div>
+
+</body>
+</html>
